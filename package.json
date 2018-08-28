@@ -1,0 +1,19 @@
+{
+  "name": "mp3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dieumai96/mp3zing.git"
+  },
+  "author": "vu van thuy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dieumai96/mp3zing/issues"
+  },
+  "homepage": "https://github.com/dieumai96/mp3zing#readme"
+}
