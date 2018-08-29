@@ -15,5 +15,15 @@
   "bugs": {
     "url": "https://github.com/dieumai96/mp3zing/issues"
   },
-  "homepage": "https://github.com/dieumai96/mp3zing#readme"
+  "homepage": "https://github.com/dieumai96/mp3zing#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "co": "^4.6.0",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.2.10",
+    "nodemon": "^1.18.3",
+    "validator": "^10.7.0"
+  }
 }
