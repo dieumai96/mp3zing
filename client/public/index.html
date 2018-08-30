@@ -19,6 +19,18 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+      function hideURLbar(){ window.scrollTo(0,1); } </script>
+  <!-- //for-mobile-apps -->
+  <!-- js -->
+  <script src="%PUBLIC_URL%/access/js/jquery-2.2.3.min.js"></script> 
+  <!-- //js --> 
+  <!-- font-awesome icons -->
+  <link rel="stylesheet" href="%PUBLIC_URL%/access/css/font-awesome.min.css" />
+  <!-- //font-awesome icons -->
+  <link href="%PUBLIC_URL%/access/css/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
+  <link href="%PUBLIC_URL%/access/css/style.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
     <title>React App</title>
   </head>
   <body>
@@ -37,4 +49,48 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script src="%PUBLIC_URL%/access/js/owl.carousel.js"></script>  
+  <script>
+    $(document).ready(function() { 
+      $("#owl-demo").owlCarousel({
+     
+        autoPlay: 3000, //Set AutoPlay to 3 seconds
+     
+        items :5,
+        itemsDesktop : [640,5],
+        itemsDesktopSmall : [414,2],
+        navigation : true
+     
+      });
+      
+    }); 
+  </script>
+  <!--skycons-icons-->
+    <script src="%PUBLIC_URL%/access/js/skycons.js"></script>
+  <!--//skycons-icons-->
+  <script>
+     var icons = new Skycons({"color": "#fff"}),
+        list  = [
+        "clear-night","wind","rain","cloudy", "snow","fog"
+        ],
+        i;
+
+      for(i = list.length; i--; )
+      icons.set(list[i], list[i]);
+
+      icons.play();
+  </script>
+  <script>
+     var icons = new Skycons({"color": "#FFD700"}),
+        list  = [
+        "partly-cloudy-day",
+        "partly-cloudy-night","clear-day","sleet"
+        ],
+        i;
+
+      for(i = list.length; i--; )
+      icons.set(list[i], list[i]);
+
+      icons.play();
+  </script>
 </html>
