@@ -27,6 +27,9 @@ const itemSchema = new Schema({
 
   snow: {
     type: Number
+  },
+  date: {
+    type: Date,
   }
 })
 const weatherSchema = new Schema({
