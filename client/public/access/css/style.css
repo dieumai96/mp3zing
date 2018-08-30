@@ -151,6 +151,7 @@ input[type="submit"],.btn-primary,.agileits_copyright p a,.w3l_search_bottom ul.
 }
 .w3l_search_bottom ul.agileits_social_icons li{
 	display:inline-block;
+	margin: 0 4px;
 }
 .w3l_search_bottom ul.agileits_social_icons li a{
 	width:35px;

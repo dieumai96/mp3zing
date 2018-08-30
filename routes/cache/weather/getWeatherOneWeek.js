@@ -8,7 +8,7 @@ module.exports = function getWeatherOneWeek(req, res, next) {
   const url = `http://api.openweathermap.org/data/2.5/forecast/daily?q=${param}&units=metric&cnt=7&appid=${keys.KEY_API}`;
   request(url, function (err, response, body) {
     if (err) {
-      console.log('error:', error);
+      console.log('error:', err);
     } else {
       let weather = JSON.parse(body)
       return res.send(weather);
