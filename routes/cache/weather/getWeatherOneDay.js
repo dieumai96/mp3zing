@@ -4,9 +4,7 @@ const keys = require('./../../../config/keys');
 const request = require('request');
 module.exports = function getWeatherOneDay(req, res, next) {
   const param = req.params.day;
-  const url = `
-  http://api.openweathermap.org/data/2.5/weather?q=${param}&units=imperial&appid=${keys.KEY_API}
-  `;
+  const url = `http://api.openweathermap.org/data/2.5/forecast/daily?q=${param}&units=metric&cnt=1&appid=${keys.KEY_API}`;
   request(url, function (err, response, body) {
     if (err) {
       console.log('error:', error);

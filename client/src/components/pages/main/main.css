@@ -1,0 +1,13 @@
+.w3layouts_weather_updates li:nth-child(1){
+  background:  #b54343;
+}
+/* .w3_weather_scroll h5{
+  color:  #FFD700;
+} */
+.change_country {
+  cursor: pointer;
+  transition: .5s;
+}
+.change_country:hover{
+  background: #b54343
+}

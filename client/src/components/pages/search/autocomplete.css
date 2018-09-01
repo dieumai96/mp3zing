@@ -1,0 +1,15 @@
+#react-autowhatever-1{
+  background: #e7d3d3 ;
+}
+ul.react-autosuggest__suggestions-list li.react-autosuggest__suggestion  {
+  padding: 5px;
+  border : 1px solid #f1e9e9;
+  border-bottom: 0px;
+  transition: .5s;
+}
+ul.react-autosuggest__suggestions-list li.react-autosuggest__suggestion:last-child{
+  border-bottom: 1px solid #f1e9e9;
+}
+ul.react-autosuggest__suggestions-list li.react-autosuggest__suggestion:hover{
+  background: #ddd;
+}
