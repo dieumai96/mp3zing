@@ -30,7 +30,7 @@ img{max-width:100%;}
 html, body{
     font-size: 100%;
 	font-family: 'PT Sans Narrow', sans-serif;
-    background:url(../images/img6.jpg) no-repeat 0px 0px;
+    background:url(../images/img7.jpg) no-repeat 0px 0px;
 		background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -217,7 +217,7 @@ input[type="submit"],.btn-primary,.agileits_copyright p a,.w3l_search_bottom ul.
     color: #fff;
     padding:.85em .5em;
     border-bottom: 2px solid #414141;
-	width: 89%;
+	width: 100%;
 }
 .w3layouts_weather_updates li span{
 	float: right;

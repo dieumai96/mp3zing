@@ -11,7 +11,7 @@ router.post('/register', (req, res, next) => {
   const { isValid, errors } = validateRegisterInput(req.body);
 
   if (!isValid) {
-    return res.status(400).json({ error: true, errors });
+    return res.status(400).json(errors);
   }
   co(function* () {
     const existingUser = yield User.findOne({ username });
@@ -32,7 +32,7 @@ router.post('/login', (req, res, next) => {
   const { username, password } = req.body;
   const { isValid, errors } = validateLoginInput(req.body);
   if (!isValid) {
-    return res.status(400).json({ error: true, errors });
+    return res.status(400).json(errors);
   }
   User.findOne({ username: username })
     .then(user => {
@@ -43,8 +43,6 @@ router.post('/login', (req, res, next) => {
       user.comparePassword(password).then(isMatch => {
         if (isMatch) {
           res.status(200).json({
-            username: user.username,
-            password: user.password,
             access_token: user.access_token,
           })
         } else {

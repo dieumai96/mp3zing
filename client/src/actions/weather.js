@@ -33,6 +33,7 @@ export function fetchInitial(name) {
       .catch(err => {
         console.log(err);
       });
+      dispatch(fetchByToday(name));
   }
 }
 export function fetchByToday(value) {

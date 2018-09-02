@@ -5,9 +5,9 @@ import Moment from 'react-moment';
 import WeatherToday from './weatherToday';
 import WeatherSuggest from './weatherSuggest';
 import Autocomplete from '../search/autocomplete';
-import PageNotFound from './../notfound/pageNotFound';
 require('./main.css');
 class Main extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +16,7 @@ class Main extends Component {
       text_search: '',
     }
   }
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchInitial(this.state.name);
   }
   componentWillReceiveProps(nextProps) {
@@ -27,7 +27,7 @@ class Main extends Component {
     }
   }
   render() {
-    const { city, listWeatherDay, country  , errors} = this.props.weather;
+    const { city, listWeatherDay, country,temp_today ,errors } = this.props.weather;
     let icon = (item) => {
       if (item.weather[0].main == 'Rain') {
         return (
@@ -51,49 +51,47 @@ class Main extends Component {
         </li>
       )
     }) : [];
-   
-    return (
 
-     
-      <div className="main">
-        <h1>Simple Metro Weather Widget</h1>
-        <div className="w3layouts_main_grids">
-          <div className="w3layouts_main_grid_left">
-            <div className="w3_search">
-              <Autocomplete />
-            </div>
-            <div className="w3l_search_bottom">
-              <WeatherSuggest />
-              <ul className="agileits_social_icons">
-                <li><a href="#" className="agileinfo_facebook"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#" className="wthree_instagram"><i className="fa fa-instagram" aria-hidden="true"></i></a></li>
-                <li><a href="#" className="w3_agileits_twitter"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="#" className="agile_google"><i className="fa fa-google-plus" aria-hidden="true"></i></a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="w3layouts_main_grid_right">
-            <div className="agileits_w3layouts_main_grid_right">
-              <div className="w3_agile_main_grid_left">
-                <h2>{(!errors &&  city) ? city.name :'NotFound The City'}</h2>
-                <p><i className="fa fa-clock-o" aria-hidden="true"></i>&nbsp;{(!errors &&  city) ? country :''}</p>
-                {/* <TimeOfCountry /> */}
+    return (
+        <div className="main">
+          <h1>Simple Metro Weather Widget</h1>
+          <div className="w3layouts_main_grids">
+            <div className="w3layouts_main_grid_left">
+              <div className="w3_search">
+                <Autocomplete />
               </div>
-              <div className="w3_agile_main_grid_right">
-                <ul className="w3layouts_weather_updates">
-                  {(!errors &&  city) ? listWeather :null}
+              <div className="w3l_search_bottom">
+                <WeatherSuggest />
+                <ul className="agileits_social_icons">
+                  <li><a href="#" className="agileinfo_facebook"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
+                  <li><a href="#" className="wthree_instagram"><i className="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  <li><a href="#" className="w3_agileits_twitter"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
+                  <li><a href="#" className="agile_google"><i className="fa fa-google-plus" aria-hidden="true"></i></a></li>
                 </ul>
               </div>
-              <div className="clear"> </div>
             </div>
-            <WeatherToday />
+            <div className="w3layouts_main_grid_right">
+              <div className="agileits_w3layouts_main_grid_right">
+                <div className="w3_agile_main_grid_left">
+                  <h2>{(!errors && city) ? city.name : 'NotFound The City'}</h2>
+                  <p><i className="fa fa-clock-o" aria-hidden="true"></i>&nbsp;{(!errors && city) ? country : ''}</p>
+                  {/* <TimeOfCountry /> */}
+                </div>
+                <div className="w3_agile_main_grid_right">
+                  <ul className="w3layouts_weather_updates">
+                    {(!errors && city) ? listWeather : null}
+                  </ul>
+                </div>
+                <div className="clear"> </div>
+              </div>
+              <WeatherToday temp_today = {temp_today}/>
+            </div>
+            <div className="clear"> </div>
           </div>
-          <div className="clear"> </div>
+          <div className="agileits_copyright">
+            <p>© 2017 Simple Metro Weather Widget. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+          </div>
         </div>
-        <div className="agileits_copyright">
-          <p>© 2017 Simple Metro Weather Widget. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
-        </div>
-      </div>
     )
   }
 }
@@ -102,6 +100,7 @@ const mapStateToProps = (state) => ({
   city: state.weather.city,
   list: state.weather.listWeatherDay,
   country: state.weather.country,
+  temp_today : state.weather.temp_today,
   change_city: state.weather.change_city,
   errors: state.weather.errors,
 })
